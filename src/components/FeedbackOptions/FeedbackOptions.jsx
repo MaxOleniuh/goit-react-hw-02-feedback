@@ -1,4 +1,5 @@
-const FeedbackOptions = ({onGood, onNeutral, onBad}) => {
+import PropTypes from "prop-types";
+const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
     return (
         <div className="buttonContainer">
           <button onClick={onGood} type="button">
@@ -12,5 +13,10 @@ const FeedbackOptions = ({onGood, onNeutral, onBad}) => {
           </button>
         </div>
     )
+}
+FeedbackOptions.propTypes = {
+  onGood: PropTypes.func.isRequired,
+  onNeutral: PropTypes.func.isRequired,
+  onBad: PropTypes.func.isRequired,
 }
 export default FeedbackOptions;

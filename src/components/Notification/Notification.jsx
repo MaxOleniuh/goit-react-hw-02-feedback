@@ -5,5 +5,8 @@ const Notification = ({ message, total }) => {
         total === 0 && <h4>{message}</h4>
     )
 }
-console.log(Notification.propTypes)
+Notification.propTypes = {
+    message: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired,
+}
 export default Notification;
