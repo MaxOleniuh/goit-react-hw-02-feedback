@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
+import { Title } from "./Notification.styled";
 const Notification = ({ message, total }) => {
-    console.log(total)
     return (
-        total === 0 && <h4>{message}</h4>
+        total === 0 && <Title>{message}</Title>
     )
 }
 Notification.propTypes = {

@@ -1,17 +1,18 @@
 import PropTypes from "prop-types";
+import { ButtonContainer, Button } from './FeedbackOptions.styled';
 const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
     return (
-        <div className="buttonContainer">
-          <button onClick={onGood} type="button">
+        <ButtonContainer className="buttonContainer">
+          <Button onClick={onGood} type="button">
             Good
-          </button>
-          <button onClick={onNeutral} type="button">
+          </Button>
+          <Button onClick={onNeutral} type="button">
             Neutral
-          </button>
-          <button onClick={onBad} type="button">
+          </Button>
+          <Button onClick={onBad} type="button">
             Bad
-          </button>
-        </div>
+          </Button>
+        </ButtonContainer>
     )
 }
 FeedbackOptions.propTypes = {
