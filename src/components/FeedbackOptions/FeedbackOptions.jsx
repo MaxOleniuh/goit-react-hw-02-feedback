@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import { ButtonContainer, Button } from './FeedbackOptions.styled';
 const FeedbackOptions = ({ onFeedback }) => {
+  const options = [
+    { value: 'good', label: 'Good' },
+    { value: 'neutral', label: 'Neutral' }, 
+    { value: 'bad', label: 'Bad'}
+  ]
     return (
-        <ButtonContainer className="buttonContainer">
-          <Button onClick={() => onFeedback('good')} type="button">
-            Good
+      <ButtonContainer className="buttonContainer">{options.map(button => 
+        <Button key={button.value} onClick={() => onFeedback(`${button.value}`)} type="button">
+            {button.label}
           </Button>
-          <Button onClick={() => onFeedback('neutral')} type="button">
-            Neutral
-          </Button>
-          <Button onClick={() => onFeedback('bad')} type="button">
-            Bad
-          </Button>
+      )}
         </ButtonContainer>
     )
 }
