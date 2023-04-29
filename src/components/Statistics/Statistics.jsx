@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { StatsContainer, TitleStyled, SpanStyled } from "./Statistics.styled";
 const Statistics = ({ good, neutral, bad, total, positivePercentage, title }) => {
   return (
-  total > 0 &&
       <StatsContainer className = "statsContainer" >
       <TitleStyled>{title}</TitleStyled>
       <SpanStyled>Good:{good}</SpanStyled>
