@@ -10,15 +10,11 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  onGood = () => {
-    this.setState(prevState => ({ good: prevState.good + 1 }));
-  };
-  onNeutral = () => {
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  };
-  onBad = () => {
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  };
+  onFeedback = (type) => {
+    this.setState(prevState => ({
+      [type]: prevState[type] + 1
+    }));
+  }
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
@@ -34,9 +30,7 @@ export class App extends Component {
       <>
         <Section title='Please leave feedback'>
         <FeedbackOptions
-          onGood={this.onGood}
-          onNeutral={this.onNeutral}
-          onBad={this.onBad}
+          onFeedback={this.onFeedback}
            />
           <Statistics
           title='Statistics'
